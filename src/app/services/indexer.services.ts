@@ -3,14 +3,16 @@ import { Injectable, inject } from "@angular/core";
 import { map, of } from 'rxjs';
 import { environment } from "../environment";
 
-export interface Balance {
-    result: {
-        balance: number;
-        info: {
-            image: string;
-            name: string;
-        }
-    };
+
+export class Balance{
+    balance!: number;
+    info!: {
+        image: string;
+        name: string;
+    }
+}
+export interface IndexerResponse {
+    result: Balance;
 }
 
 export interface Crypto {
@@ -29,19 +31,17 @@ export class ShyftApiService {
         'WBTC': '9n4nbM75f5Ui33ZbPYXn59EwSgE8CGsHtAeTH5YFeJ9E',
     };
 
-    getAccount(publicKey: string | null | undefined, token:string='RAY') {
+    getAccount(publicKey: string | null | undefined, token:string='Silly') {
         if (!publicKey){
             return of(null);
         }
-        console.log(this._headers)
-
         const url = new URL('https://api.shyft.to/sol/v1/wallet/token_balance');
 
         url.searchParams.append('network', 'mainnet-beta');
         url.searchParams.append('wallet', publicKey);
 
         url.searchParams.append('token', this._mints[token]);
-        return this._httpClient.get<Balance>(
+        return this._httpClient.get<IndexerResponse>(
             url.toString(),
             { headers: this._headers }
         )
