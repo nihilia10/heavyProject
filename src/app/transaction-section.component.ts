@@ -28,11 +28,6 @@ export class TruncatePipe implements PipeTransform {
                 <p class="text-4xl mb-12"> <i> Tu historial: </i> </p>
             </div>           
             <div class='flex w-50 justify-center items-center'>
-                <!-- <img [src]="account()?.info?.image" class="w-8 h-8" />
-                <p class='text-xl px-4'> {{account()?.info?.name}}: </p>
-                <p class='text-xl px-4'> $ {{account()?.balance}} </p> -->
-                <!-- <p class='text-xl px-4'> {{history()}} </p> -->
-
                 <table class="table-fixed border-spacing-1 border border-black">
                     <thead>
                         <tr>

@@ -66,7 +66,7 @@ export class ShyftApiService {
 
     getTransactionHistory(publicKey: string | null | undefined){
         if (!publicKey){
-            return of(null);
+            return of([]);
         }
         const url = new URL('https://api.shyft.to/sol/v1/transaction/history');
 
