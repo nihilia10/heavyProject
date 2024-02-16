@@ -15,8 +15,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
             <img src="../assets/nihilia_photo.jpeg">
         </mat-grid-tile>
         </mat-grid-list>
-        <!-- 
-        </mat-grid-list> -->
     </section>
     `,
     standalone: true,
