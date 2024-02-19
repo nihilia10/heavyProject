@@ -12,9 +12,9 @@ export const appRoutes: Route[] = [
             import('./settings-page.component').then((m) => m.SettingsPageComponent)
     },
     {
-        path: 'history',
+        path: 'wallet',
         loadComponent: () => 
-            import('./history-page.component').then((m) => m.HistoryPageComponent)
+            import('./wallet-page.component').then((m) => m.WalletPageComponent)
     },
     {
         path: '**',
